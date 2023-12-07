@@ -3,18 +3,17 @@ import moonDark from "../../assets/images/icon-moon-dark.svg";
 import sunLight from "../../assets/images/icon-sun-light.svg";
 import sunDark from "../../assets/images/icon-sun-dark.svg";
 import { Quiz } from "../types/repositoryType";
+import { useState } from "react";
 
 interface TopBarProps {
-  darkMode: boolean;
-  handleChangeDarkMode: () => void;
   quizSelected: Quiz | null;
 }
 
 export default function Header({
-  darkMode,
-  handleChangeDarkMode,
   quizSelected,
 }: TopBarProps) {
+  const [darkMode, setDarkMode] = useState<boolean>(false);
+
   const iconSun = darkMode ? sunLight : sunDark;
   const iconMoon = darkMode ? moonLight : moonDark;
 
@@ -29,17 +28,18 @@ export default function Header({
     return title && classMap[title.toLowerCase()]
   };
 
+  function handleTheme () {
+    document.documentElement.classList.toggle("dark")
+    setDarkMode(!darkMode)
+  }
+
   return (
     <header className="flex items-center justify-between w-2/3">
       <div className="flex items-center gap-4">
       <div className={`shadow rounded-md ${getQuizBackgroundClass(quizSelected?.title)}`}>
         <img src={quizSelected?.icon} alt={quizSelected?.title} />
         </div>
-        <p
-          className={`font-bold text-2xl ${
-            darkMode ? "text-white" : "text-dark-theme"
-          }`}
-        >
+        <p className="font-bold text-2xl text-dark-theme dark:text-white">
           {quizSelected?.title}
         </p>
       </div>
@@ -48,8 +48,7 @@ export default function Header({
         <img src={iconSun} alt="Icon Sun" />
         <input
           type="checkbox"
-          checked={darkMode}
-          onChange={handleChangeDarkMode}
+          onChange={handleTheme}
         />
         <img src={iconMoon} alt="Icon Moon" />
       </div>

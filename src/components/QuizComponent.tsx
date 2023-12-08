@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Quiz } from "../types/repositoryType";
-import iconError from '../../assets/images/icon-error.svg'
+import iconError from '../assets/images/icon-error.svg'
 import SubmitButton from './buttons/SubButton'
 import NextQuestionButton from "./buttons/NextQuestionButton";
 import SeeResultsButton from "./buttons/SeeResultsButton";

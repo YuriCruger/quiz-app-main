@@ -39,7 +39,7 @@ function App() {
 
   return (
     <SkeletonTheme baseColor="#626C7F dark:#babec4">
-      <main className="h-screen w-full bg-white flex flex-col items-center justify-center bg-patternBg bg-no-repeat bg-cover dark:bg-darkness dark:bg-patternBgDark">
+      <main className="h-screen w-full bg-white flex flex-col items-center justify-center bg-patternBg bg-no-repeat bg-cover dark:bg-dark-theme dark:bg-patternBgDark max-lg:h-full max-lg:py-10">
         <TopBar
           quizSelected={quizSelected}
         />

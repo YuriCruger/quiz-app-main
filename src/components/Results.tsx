@@ -23,14 +23,14 @@ export default function Results({
       }
 
     return (
-        <div className={`flex justify-between w-2/3 mt-20`}>
-            <div className="w-3/6">
-                <h2 className="text-6xl font-bold text-dark-theme dark:text-white">
-                    Quiz completed <br /> <span className="font-extrabold">You scored...</span>
+        <div className="flex justify-between w-full px-40 mt-20 max-lg:w-full max-lg:px-20 max-lg:flex-col max-lg:gap-10 max-lg:mt-6 max-md:px-10">
+            <div className="w-3/6 max-lg:w-full">
+                <h2 className="text-5xl font-bold text-dark-theme dark:text-white max-lg:text-4xl">
+                    Quiz completed <br className="max-xl:hidden"/> <span className="font-extrabold">You scored...</span>
                 </h2>
             </div>
 
-            <div className="w-2/6">
+            <div className="w-2/6 max-lg:w-full">
                 <div className="shadow-md h-80 rounded-md flex flex-col items-center justify-center gap-10 bg-white dark:bg-dark-theme">
                 <div className="flex items-center gap-4">
                     <div className={`shadow rounded-md ${getQuizBackgroundClass(quizSelected?.title)}`}>

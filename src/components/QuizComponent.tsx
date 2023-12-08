@@ -4,6 +4,8 @@ import iconError from '../../assets/images/icon-error.svg'
 import SubmitButton from './buttons/SubButton'
 import NextQuestionButton from "./buttons/NextQuestionButton";
 import SeeResultsButton from "./buttons/SeeResultsButton";
+import { Progress } from "@/components/ui/progress"
+
 
 interface QuizProps {
   quizSelected: Quiz | null;
@@ -44,21 +46,21 @@ export default function QuizComponent({ quizSelected, setPoints }: QuizProps) {
   };
 
   return (
-    <div className={`flex justify-between w-2/3 mt-20`}>
-      <div className="flex flex-col justify-between w-3/6">
-        <div className="flex flex-col gap-10 pr-14">
+    <div className="flex justify-between w-full px-40 mt-20 gap-10 max-lg:w-full max-lg:px-20 max-lg:flex-col max-lg:gap-10 max-lg:mt-6 max-md:px-10">
+      <div className="flex flex-col justify-between w-3/6 max-lg:w-full max-lg:pr-0">
+        <div className="flex flex-col gap-10 max-lg:pr-0 max-lg:mb-6 max-lg:gap-6">
           <p className="text-sm italic font-semibold text-steel-blue dark:text-light-blue">
             Question <span>{currentQuestionIndex + 1}</span> of{" "}
             {quizSelected?.questions.length}
           </p>
-          <h2 className="text-5xl font-bold text-dark-theme dark:text-white">
+          <h2 className="text-5xl font-bold text-dark-theme dark:text-white max-lg:text-4xl">
             {quizSelected?.questions[currentQuestionIndex].question}
           </h2>
         </div>
-        <p>ProgressBar</p>
+        <Progress value={currentQuestionIndex}/>
       </div>
 
-      <div className="flex flex-col gap-6 h-fit text-2xl w-3/6">
+      <div className="flex flex-col gap-6 h-fit text-2xl w-3/6 max-lg:w-full">
         {quizSelected?.questions[currentQuestionIndex].options.map(
           (option, index) => (
             <form key={option}>
@@ -74,7 +76,9 @@ export default function QuizComponent({ quizSelected, setPoints }: QuizProps) {
 
                 onClick={() => handleOptionClick(option)}
               >
-                <div>{String.fromCharCode(65 + index)}</div>
+                <div className="bg-options px-3 py-1 rounded-md">
+                <div className="text-dark-theme">{String.fromCharCode(65 + index)}</div>
+                </div>
                 <h2 className="pr-6">{option}</h2>
               </div>
             </form>

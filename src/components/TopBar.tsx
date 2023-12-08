@@ -4,6 +4,8 @@ import sunLight from "../../assets/images/icon-sun-light.svg";
 import sunDark from "../../assets/images/icon-sun-dark.svg";
 import { Quiz } from "../types/repositoryType";
 import { useState } from "react";
+import { Switch } from "@/components/ui/switch"
+
 
 interface TopBarProps {
   quizSelected: Quiz | null;
@@ -34,7 +36,7 @@ export default function Header({
   }
 
   return (
-    <header className="flex items-center justify-between w-2/3">
+    <header className="flex items-center justify-between w-full px-40 max-lg:w-full max-lg:px-20 max-lg:flex-row-reverse max-md:px-10">
       <div className="flex items-center gap-4">
       <div className={`shadow rounded-md ${getQuizBackgroundClass(quizSelected?.title)}`}>
         <img src={quizSelected?.icon} alt={quizSelected?.title} />
@@ -46,10 +48,7 @@ export default function Header({
 
       <div className="flex gap-2">
         <img src={iconSun} alt="Icon Sun" />
-        <input
-          type="checkbox"
-          onChange={handleTheme}
-        />
+        <Switch onClick={handleTheme}/>
         <img src={iconMoon} alt="Icon Moon" />
       </div>
     </header>

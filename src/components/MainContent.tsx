@@ -21,18 +21,17 @@ export default function MainContent({
 }: MainContentProps) {
 
   return (
-    <div className={`flex justify-between w-2/3 mt-20`}>
-      <div className="w-3/6">
-        <h1 className="text-5xl font-bold text-dark-theme dark:text-white">
-          Welcome to the <br />{" "}
-          <span className="font-extrabold">Frontend Quiz</span>
+    <div className="flex justify-between w-full px-40 mt-20 gap-10 max-lg:flex-col max-lg:w-full max-lg:px-20 max-lg:mt-6 max-md:px-10">
+      <div className="w-3/6 max-lg:w-full">
+        <h1 className="text-5xl font-bold text-dark-theme dark:text-white max-lg:text-4xl">
+          Welcome to the <br className="max-xl:hidden"/> <span className="font-extrabold">Frontend Quiz</span>
         </h1>
-        <p className="text-sm italic font-semibold mt-20 text-steel-blue dark:text-light-blue">
+        <p className="text-sm italic font-semibold mt-20 text-steel-blue dark:text-light-blue max-lg:mt-10">
           Pick a subject to get started.
         </p>
       </div>
 
-      <div className="flex flex-col gap-6 h-fit text-2xl w-3/6">
+      <div className="flex flex-col gap-6 h-fit text-2xl w-3/6 max-lg:w-full">
         {isFetching ? (
           <Skeleton height={80} count={4} />
         ) : (

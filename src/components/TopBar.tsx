@@ -1,7 +1,7 @@
-import moonLight from "../assets/images/icon-moon-light.svg";
-import moonDark from "../assets/images/icon-moon-dark.svg";
-import sunLight from "../assets/images/icon-sun-light.svg";
-import sunDark from "../assets/images/icon-sun-dark.svg";
+import moonLight from "../../public/images/icon-moon-light.svg";
+import moonDark from "../../public/images/icon-moon-dark.svg";
+import sunLight from "../../public/images/icon-sun-light.svg";
+import sunDark from "../../public/images/icon-sun-dark.svg";
 import { Quiz } from "../types/repositoryType";
 import { useState } from "react";
 import { Switch } from "@/components/ui/switch"

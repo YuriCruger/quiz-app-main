@@ -84,8 +84,8 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        patternBg: "url(./src/assets/images/pattern-background-mobile-light.svg)",
-        patternBgDark: "url(./src/assets/images/pattern-background-mobile-dark.svg)",
+        patternBg: "url(./public/images/pattern-background-mobile-light.svg)",
+        patternBgDark: "url(./public/images/pattern-background-mobile-dark.svg)",
       },
     },
   },

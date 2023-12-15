@@ -31,7 +31,7 @@ export default function Results({
             </div>
 
             <div className="w-2/6 max-lg:w-full">
-                <div className="shadow-md h-80 rounded-md flex flex-col items-center justify-center gap-10 bg-white dark:bg-dark-theme">
+                <div className="shadow-md h-80 rounded-md flex flex-col items-center justify-center gap-10 bg-white dark:bg-card-theme">
                 <div className="flex items-center gap-4">
                     <div className={`shadow rounded-md ${getQuizBackgroundClass(quizSelected?.title)}`}>
                         <img src={quizSelected?.icon} alt={quizSelected?.title} />

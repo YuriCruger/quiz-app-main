@@ -66,7 +66,7 @@ export default function QuizComponent({ quizSelected, setPoints }: QuizProps) {
             <form key={option}>
               <div
                 key={option}
-                className={`flex items-center gap-10 shadow-md px-4 py-2 rounded-md w-full font-bold cursor-pointer min-h-[80px] bg-white text-dark-theme dark:bg-dark-theme dark:text-white ${
+                className={`flex items-center gap-10 shadow-md px-4 py-2 rounded-md w-full font-bold cursor-pointer min-h-[80px] bg-white text-dark-theme dark:bg-card-theme dark:text-white ${
                   selectedOption === option && "border-2 border-purple"} ${submitClicked
                     ? option === quizSelected?.questions[currentQuestionIndex].answer
                       ? 'border-2 border-green-500'

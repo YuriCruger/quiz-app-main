@@ -38,7 +38,7 @@ export default function MainContent({
           data?.quizzes.map((quiz) => (
             <div
               key={quiz.title}
-              className="flex items-center gap-10 shadow-md px-4 py-2 rounded-md w-full font-bold cursor-pointer min-h-[80px] bg-white text-dark-theme dark:bg-dark-theme dark:text-white"
+              className="flex items-center gap-10 shadow-md px-4 py-2 rounded-md w-full font-bold cursor-pointer min-h-[80px] bg-white text-dark-theme dark:bg-card-theme dark:text-white"
               onClick={() => handleQuizSelect(quiz)}
             >
               <div className={`shadow rounded-md ${getQuizBackgroundClass(quiz.title)}`}>
